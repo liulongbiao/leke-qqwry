@@ -7,8 +7,8 @@
 		<version>1.2.6.RELEASE</version>
 	</parent>
 	<groupId>cn.strong.leke</groupId>
-	<artifactId>leke-core-ip</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>leke-qqwry</artifactId>
+	<version>1.0.0</version>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
