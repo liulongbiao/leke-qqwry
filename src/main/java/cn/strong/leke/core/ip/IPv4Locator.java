@@ -21,6 +21,16 @@ public class IPv4Locator {
 		Assert.notNull(entries);
 		this.entries = entries;
 	}
+	
+	/**
+	 * 根据 IPv4 地址字符串查找对应的地址和运营商信息
+	 * 
+	 * @param ipv4Address
+	 * @return
+	 */
+	public IPv4Loc locate(String ipv4Address) {
+		return locate(IPv4.parse(ipv4Address));
+	}
 
 	/**
 	 * 找到 IP 所对应的地址和运营商信息
