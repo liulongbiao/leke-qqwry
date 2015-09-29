@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.Resource;
 import org.springframework.util.Assert;
 
@@ -23,7 +24,7 @@ import org.springframework.util.Assert;
  * @author liulongbiao
  *
  */
-public class IPv4LocatorFactoryBean implements FactoryBean<IPv4Locator> {
+public class IPv4LocatorFactoryBean implements FactoryBean<IPv4Locator>, InitializingBean {
 	private static final int IP_RECORD_LENGTH = 7; // 索引记录长度，4 字节起始IP，3字节位置偏移
 	private static final byte REDIRECT_MODE_1 = 0x01;
 	private static final byte REDIRECT_MODE_2 = 0x02;
@@ -41,6 +42,7 @@ public class IPv4LocatorFactoryBean implements FactoryBean<IPv4Locator> {
 		this.datFile = datFile;
 	}
 
+	@Override
 	public void afterPropertiesSet() throws Exception {
 		Assert.notNull(datFile, "ip dat file is null!");
 		File file = datFile.getFile();
